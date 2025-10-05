@@ -170,7 +170,8 @@ article {
   background: var(--eerie-black-2);
   border: 1px solid var(--jet);
   border-radius: 20px;
-  padding: 15px;
+  padding: 8px;
+  margin: 16px 0;
   box-shadow: var(--shadow-1);
   z-index: 1;
 }
@@ -179,7 +180,7 @@ article {
   width: 100%;
   height: 1px;
   background: var(--jet);
-  margin: 16px 0;
+  margin: 10px 0;
 }
 
 .icon-box {
@@ -319,6 +320,7 @@ main {
   max-height: 112px;
   overflow: hidden;
   transition: var(--transition-2);
+  /* padding-bottom: 100px; */
 }
 
 .sidebar.active { max-height: 405px; }
@@ -329,11 +331,23 @@ main {
   justify-content: flex-start;
   align-items: center;
   gap: 15px;
+  /* padding-bottom: 30px; */
 }
 
-.avatar-box {
+/* .avatar-box {
   background: var(--bg-gradient-onyx);
-  border-radius: 20px;
+  border-radius: 20%;
+
+} */
+
+.avatar-box img {
+  display: block;
+  /* width: 80px;
+  height: 80px; */
+  border-radius: 20%;
+  height: 80%;
+  object-fit: cover;
+
 }
 
 .info-content .name {
@@ -356,10 +370,10 @@ main {
 
 .info_more-btn {
   position: absolute;
-  top: -15px;
-  right: -15px;
+  top: -8px;
+  right: -8px;
   border-radius: 0 15px;
-  font-size: 13px;
+  font-size:20px;
   color: var(--orange-yellow-crayola);
   background: var(--border-gradient-onyx);
   padding: 10px;
@@ -390,6 +404,7 @@ main {
   opacity: 0;
   visibility: hidden;
   transition: var(--transition-2);
+  padding-bottom: 30px;
 }
 
 .sidebar.active .sidebar-info_more {
@@ -1294,7 +1309,17 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 
-
+@media screen and (max-width: 600px) {
+  .modal-content {
+    max-width: 95%;
+    max-height: 70vh;
+  }
+  .exit-btn {
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+  }
+}
 
 /**
  * responsive larger than 580px screen
@@ -1573,16 +1598,31 @@ textarea.form-input::-webkit-resizer { display: none; }
   .modal {
     display: none; 
     position: fixed;
-    z-index: 1000;
+    z-index: 9999;
     padding-top: 60px;
     left: 0; top: 0;
     width: 100%; height: 100%;
     background: rgba(0,0,0,0.9);
+    /* display: flex; */
+    display: none;
   }
+
+   .modal.show {
+    display: flex;
+    align-items: center;   /* center vertical */
+    justify-content: center;
+  }
+
   .modal-content {
     margin: auto;
-    display: block;
-    max-width: 80%;
+    /* display: block; */
+    max-width: 90%;   /* biar gambar nggak melewati lebar layar */
+    max-height: 80vh;  /* biar tinggi gambar nggak lebih dari layar HP */
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    object-fit: contain;
+    align-items: center;
   }
   .exit-btn {
     position: absolute;

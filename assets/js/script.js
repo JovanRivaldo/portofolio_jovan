@@ -49,9 +49,11 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 
 }
 
+
 function openModal(src) {
   document.getElementById("myModal").style.display = "block";
   document.getElementById("modalImg").src = src;
+  modal.style.display = "flex";
 }
 function closeModal() {
   document.getElementById("myModal").style.display = "none";
